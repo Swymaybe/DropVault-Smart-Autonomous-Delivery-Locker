@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DropDroid Auth</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="auth-page">
+    <header class="site-header">
+      <div class="nav-brand">DROPDROID</div>
+      <div class="nav-middle">Customer access</div>
+      <nav class="nav-links">
+        <a href="./index.html">Home</a>
+        <a href="./dashboard.html">Dashboard</a>
+      </nav>
+    </header>
+
+    <main class="auth-layout">
+      <section class="auth-visual panel-card">
+        <div class="liquid-orb orb-one"></div>
+        <div class="liquid-orb orb-two"></div>
+        <div class="liquid-orb orb-three"></div>
+
+        <div class="auth-visual-copy">
+          <p class="eyebrow">DropDroid secure access</p>
+          <h1>Manage every delivery handover through a refined customer portal.</h1>
+          <p>
+            Sign in or create an account to access your DropDroid box, schedule incoming
+            orders, and track handovers in a secure workflow.
+          </p>
+        </div>
+      </section>
+
+      <section class="auth-card glass-card panel-card">
+        <div class="auth-switch">
+          <button class="auth-switch-btn active" type="button" data-auth-mode="login">
+            Login
+          </button>
+          <button class="auth-switch-btn" type="button" data-auth-mode="create">
+            Create account
+          </button>
+        </div>
+
+        <div id="system-notice" class="setup-note hidden">
+          <h3>Backend connection needed</h3>
+          <p id="system-message"></p>
+        </div>
+
+        <div id="login-panel" class="auth-panel">
+          <div class="panel-heading login-heading">
+            <h2>Welcome back</h2>
+            <p>Enter your account details to continue.</p>
+          </div>
+
+          <form id="login-form" class="stack-form">
+            <label>
+              <span>Email</span>
+              <input id="email" name="email" type="email" placeholder="user@dropdroid.com" required />
+            </label>
+
+            <label>
+              <span>Password</span>
+              <input id="password" name="password" type="password" placeholder="drop1234" required />
+            </label>
+
+            <button type="submit" class="primary-btn login-submit">Login</button>
+          </form>
+
+          <div class="demo-box compact-demo">
+            <p><strong>Authentication:</strong> Firebase Email/Password</p>
+            <p><strong>Storage:</strong> Firestore schedule records</p>
+          </div>
+        </div>
+
+        <div id="create-panel" class="auth-panel hidden">
+          <div class="panel-heading login-heading">
+            <h2>Create account</h2>
+            <p>Set up your DropDroid user access.</p>
+          </div>
+
+          <form id="create-form" class="stack-form">
+            <label>
+              <span>Full name</span>
+              <input name="name" type="text" placeholder="Aman Kumar" required />
+            </label>
+
+            <label>
+              <span>Email</span>
+              <input name="email" type="email" placeholder="name@example.com" required />
+            </label>
+
+            <label>
+              <span>Password</span>
+              <input name="password" type="password" placeholder="Create a secure password" required />
+            </label>
+
+            <button type="submit" class="primary-btn login-submit">Create account</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

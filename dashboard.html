@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DropDroid Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="dashboard-page">
+    <header class="site-header">
+      <div class="nav-brand">DROPDROID</div>
+      <div class="nav-middle">Customer dashboard</div>
+      <nav class="nav-links">
+        <a href="./index.html">Home</a>
+        <a href="./auth.html?mode=login">Portal</a>
+      </nav>
+    </header>
+
+    <main class="page-shell">
+      <section class="panel-card dashboard-header dashboard-hero-bar">
+        <div>
+          <p class="eyebrow">Connected vault</p>
+          <h2>Parcel operations dashboard</h2>
+          <p id="welcome-text">Checking your secure session...</p>
+        </div>
+        <div class="header-actions">
+          <span class="status-pill">ACTIVE</span>
+          <button id="logout-btn" class="secondary-btn" type="button">Logout</button>
+        </div>
+      </section>
+
+      <section id="system-notice" class="panel-card setup-note hidden">
+        <h3>Backend connection needed</h3>
+        <p id="system-message"></p>
+      </section>
+
+      <section id="dashboard-view">
+        <div class="grid-layout dashboard-grid-wide">
+          <section class="panel-card glass-card">
+            <div class="panel-heading">
+              <h3>Schedule Pickup Verification</h3>
+              <p>Store delivery details, sender email, and trigger the live scan workflow.</p>
+            </div>
+
+            <form id="schedule-form" class="stack-form">
+              <label>
+                <span>Order ID</span>
+                <input id="order-id" name="orderId" type="text" placeholder="AMZ-12345" required />
+              </label>
+
+              <label>
+                <span>Sender email</span>
+                <input
+                  id="sender-email"
+                  name="senderEmail"
+                  type="email"
+                  placeholder="sender@example.com"
+                  required
+                />
+              </label>
+
+              <label>
+                <span>Date</span>
+                <input id="pickup-date" name="pickupDate" type="date" required />
+              </label>
+
+              <label>
+                <span>Time</span>
+                <input id="pickup-time" name="pickupTime" type="time" required />
+              </label>
+
+              <label>
+                <span>E-commerce source</span>
+                <select id="vendor" name="vendor" required>
+                  <option>Amazon</option>
+                  <option>Zomato</option>
+                  <option>Blinkit</option>
+                </select>
+              </label>
+
+              <button type="submit" class="primary-btn">Add to Schedule</button>
+            </form>
+          </section>
+
+          <section class="panel-card glass-card detection-card">
+            <div class="panel-heading">
+              <h3>Live detection monitor</h3>
+              <p>Object detection, classification, notification status, and dashboard updates.</p>
+            </div>
+
+            <div class="status-list">
+              <div class="status-line">
+                <span>Detected object</span>
+                <strong id="detected-object">Waiting for parcel scan</strong>
+              </div>
+              <div class="status-line">
+                <span>Classification</span>
+                <strong id="detected-classification">Awaiting detection</strong>
+              </div>
+              <div class="status-line">
+                <span>Confidence</span>
+                <strong id="detection-confidence">Pending</strong>
+              </div>
+              <div class="status-line">
+                <span>Sender notification</span>
+                <strong id="notification-status">Pending</strong>
+              </div>
+            </div>
+
+            <button id="simulate-btn" class="secondary-btn" type="button">
+              Simulate object detection
+            </button>
+          </section>
+        </div>
+
+        <div class="grid-layout dashboard-grid-wide">
+          <section class="panel-card glass-card">
+            <div class="panel-heading">
+              <h3>Scheduled Pickups</h3>
+              <p>All planned parcel verifications appear here.</p>
+            </div>
+
+            <div id="schedule-list" class="schedule-list">
+              <div class="empty-state">No pickup scheduled yet.</div>
+            </div>
+          </section>
+
+          <section class="panel-card glass-card">
+            <div class="panel-heading">
+              <h3>Parcel activity feed</h3>
+              <p>Detection, classification, and notification events are pushed here live.</p>
+            </div>
+
+            <div id="event-feed" class="feed-list">
+              <div class="empty-state">No live events yet.</div>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DropDroid</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="nav-brand">DROPDROID</div>
+      <div class="nav-middle">Autonomous delivery vault</div>
+      <nav class="nav-links">
+        <a href="./auth.html?mode=login">Portal</a>
+        <a href="./dashboard.html">Dashboard</a>
+      </nav>
+    </header>
+
+    <div class="page-shell">
+      <section class="hero-panel">
+        <div class="hero-backdrop-word">DRONE</div>
+
+        <div class="hero-content">
+          <div class="hero-copy">
+            <p class="eyebrow">Delivery vault interface</p>
+            <h1>Secure drop point for autonomous parcel delivery.</h1>
+            <p>Professional access, live parcel detection, and sender notifications in one place.</p>
+
+            <div class="hero-actions">
+              <a class="primary-btn hero-link" href="./auth.html?mode=login">Login</a>
+              <a class="secondary-btn" href="./auth.html?mode=create">Create account</a>
+            </div>
+          </div>
+
+          <div class="hero-scene" aria-hidden="true">
+            <div class="drone">
+              <span class="drone-arm arm-a"></span>
+              <span class="drone-arm arm-b"></span>
+              <span class="drone-core"></span>
+              <span class="rotor rotor-1"></span>
+              <span class="rotor rotor-2"></span>
+              <span class="rotor rotor-3"></span>
+              <span class="rotor rotor-4"></span>
+              <span class="drone-beam"></span>
+            </div>
+
+            <div class="vault-unit">
+              <span class="vault-display"></span>
+              <span class="vault-slot"></span>
+              <div class="vault-door">
+                <span class="vault-ring"></span>
+                <span class="vault-hub"></span>
+                <span class="vault-bar vault-bar-x"></span>
+                <span class="vault-bar vault-bar-y"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-foot">
+          <div class="hero-stat">
+            <strong>Verified access</strong>
+            <span>Secure customer sign-in for each delivery schedule.</span>
+          </div>
+          <div class="hero-stat">
+            <strong>Smart scheduling</strong>
+            <span>Fast order capture with time, vendor, and sender details.</span>
+          </div>
+          <div class="hero-stat">
+            <strong>Live visibility</strong>
+            <span>Object detection, classification, and notification updates stream in real time.</span>
+          </div>
+        </div>
+      </section>
+
+      <main class="app-panel">
+        <section class="panel-card live-overview glass-card">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Live operations</p>
+              <h2>Detected parcels and dashboard updates</h2>
+              <p>Recent vault events are pushed from the integrated Firebase backend.</p>
+            </div>
+            <a class="secondary-btn" href="./dashboard.html">Open dashboard</a>
+          </div>
+
+          <div class="ops-grid">
+            <article class="ops-card ops-featured">
+              <span class="ops-label">Latest scan</span>
+              <strong id="front-detection-title">Waiting for parcel scan</strong>
+              <p id="front-detection-detail">
+                New object detection, classification, and sender notification updates will appear here.
+              </p>
+            </article>
+
+            <article class="ops-card">
+              <span class="ops-label">Activity feed</span>
+              <div id="front-feed" class="feed-list">
+                <div class="empty-state">No live events yet.</div>
+              </div>
+            </article>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

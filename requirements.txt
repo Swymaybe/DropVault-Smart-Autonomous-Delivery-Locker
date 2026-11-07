@@ -1,0 +1,10 @@
+opencv-python
+numpy
+streamlit
+firebase-admin
+pandas
+pytesseract
+pyzbar
+plyer
+scikit-learn
+pillow
